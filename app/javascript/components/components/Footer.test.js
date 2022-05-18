@@ -21,7 +21,7 @@ describe("When Footer renders", () => {
   })
 
   it("contains copyright info", () => {
-    const footerCopyright = footer.find("h2").text()
+    const footerCopyright = footer.find("h4").text()
     expect(footerCopyright).toEqual("© Creme de LaSlim Enterprises 2022")
   })
 

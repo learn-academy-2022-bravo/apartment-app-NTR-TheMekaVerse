@@ -14,9 +14,20 @@ import Header from './Header'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("When Header renders", () => {
-  it("displays a heading", () => {
-    const header = shallow(<Header />)
-    const headerHeading = header.find("h1")
-    expect(headerHeading.text()).toEqual("This should fail")
+
+  let header 
+  beforeEach(()=>{
+    header = shallow(<Header />)
   })
+
+  it("displays a heading", () => {
+    const headerHeading = header.find("Navbar")
+    expect(headerHeading.length).toEqual(1)
+  })
+
+  it("displays company name in a span element", () => {
+    const headerSpanText = header.find("span").text()
+    expect(headerSpanText).toEqual("Slumlord Estates")
+  })
+
 })
