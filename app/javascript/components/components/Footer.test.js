@@ -14,9 +14,20 @@ import Footer from './Footer'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("When Footer renders", () => {
-  it("displays a heading", () => {
-    const footer = shallow(<Footer />)
-    const footerHeading = footer.find("h3")
-    expect(footerHeading.text()).toEqual("This should fail")
+
+  let footer 
+  beforeEach(()=>{
+    footer = shallow(<Footer />)
   })
+
+  it("contains copyright info", () => {
+    const footerCopyright = footer.find("h2").text()
+    expect(footerCopyright).toEqual("© Creme de LaSlim Enterprises 2022")
+  })
+
+  it("contains external link to GitHub", () => {
+    const footerGitHubLink = footer.find("a").text()
+    expect(footerGitHubLink).toEqual("NTR-TheMekaVerse GitHub")
+  })
+
 })
