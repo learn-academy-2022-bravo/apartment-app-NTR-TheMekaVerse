@@ -14,10 +14,13 @@ import Home from './Home'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe("When Home renders", () => {
-  it("displays a heading", () => {
+  it("displays a self-titled logo", () => {
     const home = shallow(<Home />)
-    const homeHeading = home.find("h3")
-    console.log("HOME", homeHeading.debug());
-    expect(homeHeading.text()).toEqual("This Should Fail")
+    const homeLogoAltText = home.find("img").prop("alt")
+    expect(homeLogoAltText).toEqual("Slumlord Estates logo")
   })
 })
+
+//    Brown M&M ??
+// -----------------
+  // console.log("Home", homeLogoAltText.debug());
