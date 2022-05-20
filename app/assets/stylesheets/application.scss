@@ -15,6 +15,16 @@
 }
 
 
+// Home Page styling
+
+.centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
 
 // Apartment Index styling
 
@@ -26,10 +36,17 @@
 
 .indexCard {
     margin: 10px;
-    // box-shadow: 2px 2px 4px #000000;    ** use for show page maybe
 }
 
 .indexCardImage {
     height: 275px;
     width: 100%;
+}
+
+
+
+// Apartment Show styling
+
+.showImg {
+    box-shadow: 2px 2px 4px #000000;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Card, CardBody, CardGroup, CardImg, CardText, CardTitle, Col, Container } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
+import { Button, Card, CardBody, CardGroup, CardImg, CardText, CardTitle, Col, Container, Row } from 'reactstrap'
 
 export default class ApartmentIndex extends Component {
 
@@ -18,8 +19,9 @@ export default class ApartmentIndex extends Component {
 
             {this.props.apartments && this.props.apartments.map(apartment => {
               return (
-                <Col sm="4">
+                <Col sm="8" md="6" xl="4">
                   <Card className='indexCard'>
+                    
                     <CardImg
                       className='indexCardImage'
                       alt="Picture of property for sale"
@@ -35,8 +37,10 @@ export default class ApartmentIndex extends Component {
                       <CardText>
                         <p>Kosher certified, gluten free, nut free, non-GMO, paraben free. Included for your discomfort: expired termite bait, Charlotte's webs, and probably some reptile skin. Move-in bonus of a $30.92 gift card to <i>Home Goods</i> for all of your decor needs.</p>
                       </CardText>
-                      <Button>
-                        View Details
+                      <Button color='none'>
+                        <NavLink to={`/apartmentshow/${apartment.id}`} color='white'>
+                          Enter @ Own Risk
+                        </NavLink>
                       </Button>
                     </CardBody>
 
